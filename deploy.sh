@@ -96,13 +96,13 @@ deploy_static() {
         log "Creating Nginx configuration..."
         cat > "$NGINX_SITE" << EOF
 server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
+    listen 80;
+    listen [::]:80;
     
     root $REPO_DIR;
     index index.html index.htm;
     
-    server_name _;
+    server_name windows3.homeprosusa.org;
     
     # Gzip compression
     gzip on;
